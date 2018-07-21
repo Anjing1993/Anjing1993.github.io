@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="龙葵">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="重新认识img"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="习惯性坚持"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="习惯性坚持" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>习惯性坚持</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">重新认识img</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 龙葵</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-07-21</span>
+            <span class="time">09:29:28</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>或许有很多人都认为自己的html已经很6了，而且html也没有什么需要花时间学习的，我胡汉三也是这样想的。</p>
+<p>直到一个偶然的机会翻到了css事件的某一页，我整个人慌得一批啊。。。</p>
+<h3 id="img是行内元素吗？"><a href="#img是行内元素吗？" class="headerlink" title="img是行内元素吗？"></a><strong>img是行内元素吗？</strong></h3><p>那是当然了，一个行内元素只占据它对应标签的边框所包含的空间。而img它就是这么干的，它比较喜欢热闹，常常喜欢默认和别人并排站在一行，聊聊天什么的。那么问题来了</p>
+<h3 id="img为什么可以直接css设置宽高？"><a href="#img为什么可以直接css设置宽高？" class="headerlink" title="img为什么可以直接css设置宽高？"></a><strong>img为什么可以直接css设置宽高？</strong></h3><p>what?难道不是每次display block/inline-block才可以的？吓得我瓜子都掉了。。。连忙去查了文档，写了测试demo。我的天呢，img它很任性啊，不用display，就可以直接设置宽高哦，为什么呢？充满好奇…</p>
+<p>原来它是替换元素，什么是替换元素呢？其实就是通过改变标签的某个属性，可以让其呈现的内容发生改变，像input、iframe、video、textarea等等其实都是了。但是上面的问题和替换元素有什么关系呢？哈哈哈哈，这个就是问题的根源了</p>
+<h3 id="替换元素有着异于常素（人）的计算规则"><a href="#替换元素有着异于常素（人）的计算规则" class="headerlink" title="替换元素有着异于常素（人）的计算规则"></a><strong>替换元素有着异于常素（人）的计算规则</strong></h3><p>首先替换元素的尺寸计算是由三类构成的：</p>
+<ol>
+<li>固有尺寸：替换内容本身的默认尺寸</li>
+<li>HTML尺寸：html标签的原生属性，例如img 的width or height</li>
+<li>css尺寸:通过css设置的属性</li>
+</ol>
+<p>其次，计算规则是这样的（优先级css&gt;html&gt;固有），即：</p>
+<ol>
+<li>如果没有css或者html尺寸，那么元素会将固有尺寸作为最终的宽高</li>
+<li>没有css尺寸，只有html尺寸，那么元素会将html尺寸作为最终的宽高</li>
+<li>如果有css尺寸，那么他会覆盖固有或者html的尺寸，很是霸道哦</li>
+<li>如果固有尺寸还有固有的宽高比、同事仅仅设置了width或者height，那么元素还是会按照固有的宽高比，对剩余的一个属性进行计算，从而能去保持宽高比呈现出来</li>
+<li>ps:行内替换元素和块级替换元素使用同一套计算规则</li>
+</ol>
+<p>那么我们的问题是不是迎刃而解了？让我蹦跶一会</p>
+<h3 id="引申"><a href="#引申" class="headerlink" title="引申"></a><strong>引申</strong></h3><h4 id="1-img-不设置src变成非替换元素"><a href="#1-img-不设置src变成非替换元素" class="headerlink" title="1.img 不设置src变成非替换元素"></a><strong>1.img 不设置src变成非替换元素</strong></h4><p>有时候，为了提高首屏的加载速度，对于首屏以下的图片我们一般会设置一个默认的透明图片做占位符，实际上严格来讲这个资源很多余。</p>
+<p>抛开懒加载，就像那种传播的活动页面，很多图片和动画那种，其实是不需要一个默认的图片的，于是我之前直接设置一个空的，既可src=””，但是发现很多浏览器下面还是会发请求，并且请求404或者当前页面，真是尴尬</p>
+<p>于是我尝试了下，直接去掉src，但是发现在firefox下面元素的固有尺寸没有，为什么呢？看起来是Firefox对替换元素有自己的想法，确实src后，他认为这个就是一个行内非替换元素，那么随着的也就是计算规则也按照非替换元素来了，尴尬，没有固有尺寸了，宽高都是0了。不要急，display:inline-block解决它</p>
+<p>果然很棒棒啊，不会再有请求（当然这个是要抛开组内工程的自动检查哦，要不然肯定会报错，大部分都是会去检查的）但是发现这个chorme下还是会请求，怎么办呢？掐死它吗？当然也很简单，给img的alt=”任意值”搞定！</p>
+<h4 id="2-给img元素设置伪类"><a href="#2-给img元素设置伪类" class="headerlink" title="2.给img元素设置伪类"></a><strong>2.给img元素设置伪类</strong></h4><p>是个前端都知道，img元素是不可以设置伪类的，但是真的没有办法莫？还记得我上面提到的吗？可以有办法让img变成非替换元素，这样的话是不是可以设置了？</p>
+<p>而且通过这个技巧，我们可以实现一下点击按钮切换图片的效果，不用再每次去改变src：<br><code>&lt;img&gt;
+img:afer{
+    content:url(1.jpg)
+    position:absolute;
+    XXX
+}</code><br>点击按钮的时候，直接设置一个src就ok，这样img变成了替换元素，after也就无效了，不用再去移除什么</p>
+<h4 id="3-给h1设置content"><a href="#3-给h1设置content" class="headerlink" title="3.给h1设置content"></a><strong>3.给h1设置content</strong></h4><p>了解了上面的只是，我发现是不是可以将普通的非替换元素也变成替换元素的？试试？</p>
+<p>有时候我们需要给一些按钮或者标题添加比较独特的背景，字体样式也能独特。无法通过css实现，一般都是直接用图片：<br><code>&lt;a&gt;立即领取&lt;/a&gt;
+a{
+    display:block;
+    width:120px;
+    height:60px;
+    background:url(1.jpg);
+    text-indent:-999px;
+}</code><br>这样写是不是很麻烦啊，我每次都觉得很烦，有个新的方案：<br><code>a{
+    content:url(1.jpg)
+}</code><br>不用在设置那么多样式就搞定所有，是不是感觉发现了新大陆呢~~~</p>
+<p>好了，今天就到这里吧，王皮皮同志要出去浪了</p>
+<p>**欢迎阅读！<br>有问题，欢迎拍砖！<br>多和别人交流，冲撞新的火花</p>
+<p>**</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
