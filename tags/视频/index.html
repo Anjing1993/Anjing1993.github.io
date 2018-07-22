@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="龙葵">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="h5视频踩坑"/>
+  <meta property="og:title" content="习惯性坚持"/>
   <meta property="og:description" content="前端" />
   <meta property="og:site_name" content="习惯性坚持"/>
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="http://yoursite.com"/>
   
     <link rel="alternate" href="/atom.xml" title="习惯性坚持" type="application/atom+xml">
@@ -35,7 +35,8 @@
 </head>
 
   <body>
-    <!-- Page Header -->
+    <!-- Archive Header -->
+<!-- Page Header -->
 
 
 <header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
@@ -43,7 +44,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">h5视频踩坑</p>
+          <p class="title">Blog Archives</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -88,44 +89,34 @@
   </div>
 </header>
 
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By 龙葵</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2018-07-18</span>
-            <span class="time">12:43:12</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
+<!-- Archive List -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      
+        <div class="archive-item">
+  <a href="/2018/07/18/h5视频踩坑/" class="post-title">
+    h5视频踩坑
+  </a>
+  <div class="date text-muted">Posted on 2018-07-18 20:56:53</div>
+</div>
 
-<a class="tag" href="/tags/移动端/">#移动端</a> <a class="tag" href="/tags/视频/">#视频</a>
+      
 
-
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <p>最近接到一个需求，要做h5的视频，还要各种定制的交互，当时过需求的时候还是有点虚的，因为我那个页面本身就是一个轮播，并且每一张图片的大小不一样，切换需要css3过渡，我自己觉得页面已经是有点重了，在加了视频，只会更重啊，但是有什么办法呢，没有什么很好的理由说服别人，只有默默的去做了。<br><a id="more"></a></p>
-<p>而且，说实话，之前接触的视频都是超级简单，你把video搬过来放到页面就ok，但是这次不同了，需要用户点击啊，滑动啊，过渡啊，进度条自己绘制啊，等等等等，容我喝口82年的雪碧压压惊。</p>
-<p>好了，我要开始踩坑之旅了，我知道对我来说有点艰难，可是好像是增加经验的一个机会哦，天啦噜~~~~</p>
-<p>app处理：<br>嗯，app其实一般都是比较好控制的，因为一般app同事都会封装好控件。目前的页面，因为轮播的图，大小不一，且需要切换时平滑的过渡，如果用dom，不断去改变他的css属性，那怕是要爆炸，不敢想。。。于是我们采用了canvas去实现</p>
-
-        </div>
-      </div>
     </div>
   </div>
-</article>
+</div>
+<!-- Pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      <ul class="pagination">
+          
+          
+      </ul>
+    </div>
+  </div>
+</div>
 
 
 
