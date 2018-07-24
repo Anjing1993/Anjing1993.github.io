@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-07-24</span>
-            <span class="time">11:15:57</span>
+            <span class="time">11:17:00</span>
           </span>
           
         </div>
@@ -117,7 +117,7 @@
         <!-- Post Main Content -->
         <div class="post-content">
           <p>相信大家很多时候会有这样的场景，需要去判断当前是不是处于微信当中。这个要怎么判断呢？</p>
-<p>“处于微信”，这句话的意思细挖，其实就是处于微信的浏览器中，那么我们是不是只要识别当前浏览器是不是微信浏览器就好了？答案当然是肯定的。但是要怎么判断呢？想想，我们在学习BOM的时候，是不是学过一个叫userAgent的东西？如果当初对它有一个深入的了解，那么这个问题一提出来，你就会立马想到用它，就用它。<a id="more"></a></p>
+<p>“处于微信”，这句话的意思细挖，其实就是处于微信的浏览器中，那么我们是不是只要识别当前浏览器是不是微信浏览器就好了？答案当然是肯定的。但是要怎么判断呢？想想，我们在学习BOM的时候，是不是学过一个叫userAgent的东西？如果当初对它有一个深入的了解，那么这个问题一提出来，你就会立马想到用它，就用它。<br><a id="more"></a></p>
 <h4 id="通过ua识别微信浏览器"><a href="#通过ua识别微信浏览器" class="headerlink" title="通过ua识别微信浏览器"></a>通过ua识别微信浏览器</h4><p>我们去动手，打印一下安卓或者ios在微信中的userAgent,发现</p>
 <h5 id="1-安卓"><a href="#1-安卓" class="headerlink" title="1.安卓"></a>1.安卓</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mozilla/5.0 (linux; u; android 4.1.2; zh-cn; mi-one plus build/jzo54k) applewebkit/534.30 (khtml, like gecko) version/4.0 mobile safari/534.30 micromessenger/5.0.1.352</span><br></pre></td></tr></table></figure>
 <h5 id="2-ios"><a href="#2-ios" class="headerlink" title="2.ios"></a>2.ios</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mozilla/5.0 (iphone; cpu iphone os 5_1_1 like mac os x) applewebkit/534.46 (khtml, like gecko) mobile/9b206 micromessenger/5.0</span><br></pre></td></tr></table></figure>
